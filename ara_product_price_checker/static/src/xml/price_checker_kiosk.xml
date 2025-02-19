@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+    <t t-name="product_price_checker.ProductPriceChecker">
+        <div class="container checker">
+            <div class="row mt64">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                <img class="mx-auto" src='/web/binary/company_logo' style="max-height: 50px;height: 100%;width: 100%;object-fit: contain;" alt="Logo"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+            <div class="card-body px-0 py-0" style="border-radius: 20px;">        
+                <div class="row mt16" style="border-radius: 20px;">
+                <div class="col-md-12 py-2" style="background-color: white;border: 1px solid #e0e2e6;">
+                            <div class="row g-0">
+                        <div class="col-12 p-1 mb8 mt8">
+                            <input class="checker_input border-4 bg-white fs-1 text-center" 
+                                    type="text" 
+                                    t-ref="checker_input" 
+                                    t-on-input="onChangeInput" 
+                                    autocomplete="off"
+                                    placeholder="please your scan barcode product"/>
+                        </div>
+                    </div>
+                    <div class="mx-4 my-4">
+                    <div class="row">
+                        <div class="col-md-8">
+                        <p class="h2 mb-3">
+                            <strong>
+                            <t t-if="this.state.product_name">
+                                <t t-esc="this.state.product_name"/>
+                            </t>
+                            <t t-else="">
+                                Not Found Products
+                            </t>
+                            </strong>
+                        </p>
+                        
+                        <h3 class="text-muted checker_description">
+                            <t t-if="this.state.product_description_sale">
+                            <t t-esc="this.state.product_description_sale"/>
+                            </t>
+                            <t t-if="this.state.product_barcode">
+                            Barcode <t t-esc="this.state.product_barcode"/>
+                            </t>
+                        </h3> 
+                            <strong t-if="this.state.product_pricelist">
+                               <span t-if="this.state.product_pricelist" style="font-size:50px;color:#09c711;"> 
+                                   <t t-esc="this.state.product_currency_id"/>
+                                   <t t-raw="' '"/>
+                                   <t t-esc="this.state.product_pricelist"/>
+                               </span>
+                            </strong>
+                            <br t-if="this.state.product_pricelist"/>
+                            <del t-if="this.state.product_pricelist" style="font-size:20px;">
+                            <strong style="font-size:20px;">
+                               <span > 
+                                   <t t-esc="this.state.product_currency_id"/>
+                                   <t t-raw="' '"/>
+                                   <t t-esc="this.state.product_price"/>
+                               </span>
+                            </strong>
+                            </del>
+                            <strong t-if="!this.state.product_pricelist">
+                               <span t-if="this.state.product_price" style="font-size:50px;color:#09c711;"> 
+                                   <t t-esc="this.state.product_currency_id"/>
+                                   <t t-raw="' '"/>
+                                   <t t-esc="this.state.product_price"/>
+                               </span>
+                            </strong>
+                            <ol></ol>
+                            <strong t-if="this.state.product_loyalty">
+                               <span t-if="this.state.product_pricelist"> 
+                                   Discount Ready :
+                               </span>
+                                <ul>
+                                    <t t-foreach="state.product_loyalty" t-as="loyalty" t-key="loyalty">
+                                        <li><t t-esc="loyalty"/></li>
+                                    </t>
+                                </ul>
+                            </strong>
+                        </div>
+                        <div class="col-md-4" style="align-items-left">
+                                   
+                                <t t-if="this.state.product_id">
+                                    <img t-attf-src="/web/image?model=product.product&amp;field=image_1920&amp;id=#{this.state.product_id}" class="card-img-top" style="width: 280px;height: 280px;border-radius: 20px;"/>
+                                </t>
+                                <t t-else="">
+                                </t>
+                        </div>     
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</template>
