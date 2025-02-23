@@ -12,7 +12,7 @@
         - Product Pricelist (Fix price sale)
 
     """,    
-    "author": "ara soft",
+    "author": "ARA SOFT",
     "maintainer": "ARA SOFT",
     "license" :  "OPL-1",
     "website": "",
