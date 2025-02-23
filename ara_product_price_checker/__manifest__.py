@@ -13,7 +13,7 @@
 
     """,    
     "author": "ara soft",
-    "maintainer": "ara soft",
+    "maintainer": "ARA SOFT",
     "license" :  "OPL-1",
     "website": "",
     'images': ['static/description/banner_price_checker_v18.png'],
@@ -37,7 +37,7 @@
     },   
     "installable": True,
     "application": True,
-    "price"                 :  83.10,
+    "price"                 :  52.10,
     "currency"              :  "USD",
     "pre_init_hook"         :  "pre_init_check",
 }
