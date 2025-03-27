@@ -37,7 +37,7 @@
     },   
     "installable": True,
     "application": True,
-    "price"                 :  52.10,
+    "price"                 :  56.15,
     "currency"              :  "USD",
     "pre_init_hook"         :  "pre_init_check",
 }

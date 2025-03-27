@@ -27,7 +27,7 @@ export class ProductPriceChecker extends Component {
 
         onMounted(async () => {
             this.start_focus();  
-            this.checker_input_ref.el.addEventListener('input', () => this.onChangeInput());
+            // this.checker_input_ref.el.addEventListener('input', () => this.onChangeInput());
             this.checker_input_ref.el.addEventListener('keydown', (event) => {
                 if (event.key === "Enter") {
                     console.log("Enter detected, processing input...");
