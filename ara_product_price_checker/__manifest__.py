@@ -16,7 +16,7 @@
     "maintainer": "ARA SOFT",
     "license" :  "OPL-1",
     "website": "",
-    'images': ['static/description/banner_price_checker_v18.png'],
+    'images': ['static/description/banner.gif'],
     "category": "Sales",
     "depends": [
         "product",
